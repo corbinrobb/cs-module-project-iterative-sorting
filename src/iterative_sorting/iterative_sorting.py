@@ -1,24 +1,45 @@
+
+# Selection sort psuedo
+# loop through each index
+    # declare current index and smallest index
+    # in each index start another loop from current index to end
+        # if any value is smaller than smallest index value then
+        # switch value with smallest index
+
+
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
-
-        # TO-DO: swap
-        # Your code here
+        for j in range(cur_index, len(arr)):
+            if arr[smallest_index] > arr[j]:
+                temp = arr[smallest_index]
+                arr[smallest_index] = arr[j]
+                arr[j] = temp
 
     return arr
 
+# Bubble sort psuedo
+# store last index
+# while last index is not 0:
+    # loop from 0 to last index:
+        # if cur is greater that next
+            # switch current and next values
+    # change last index - 1
+# return list
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
+    last_index = len(arr) - 1
+    while last_index > 0:
+        for i in range(last_index):
+            curr_num = arr[i]
+            next_num = arr[i + 1]
+            if curr_num > next_num:
+                arr[i] = next_num
+                arr[i+1] = curr_num
+        last_index -= 1
 
     return arr
 
