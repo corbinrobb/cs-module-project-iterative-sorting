@@ -10,13 +10,9 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        for j in range(cur_index, len(arr)):
-            if arr[smallest_index] > arr[j]:
-                temp = arr[smallest_index]
-                arr[smallest_index] = arr[j]
-                arr[j] = temp
+        for j in range(i, len(arr)):
+            if arr[i] > arr[j]:
+                arr[j], arr[i] = arr[i], arr[j]
 
     return arr
 
@@ -34,11 +30,8 @@ def bubble_sort(arr):
     last_index = len(arr) - 1
     while last_index > 0:
         for i in range(last_index):
-            curr_num = arr[i]
-            next_num = arr[i + 1]
-            if curr_num > next_num:
-                arr[i] = next_num
-                arr[i+1] = curr_num
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
         last_index -= 1
 
     return arr
